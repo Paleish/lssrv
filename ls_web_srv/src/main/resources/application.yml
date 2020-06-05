@@ -1,4 +1,6 @@
 spring:
 
-server:
-  port: 18080
+kcp:
+  bosscount: 10
+  port: 18032
+  conv: 10

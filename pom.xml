@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>ls_web_srv</module>
+        <module>ls_common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
