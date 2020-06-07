@@ -27,6 +27,8 @@ public class KcpConfig {
 
     @Resource
     private KcpServerHandler kcpServerHandler;
+    @Resource
+    private TestHandler testHandler;
 
     @Bean(name = "kcpServerBootStrap")
     public UkcpServerBootstrap ukcpServerBootstrap() {
@@ -41,6 +43,7 @@ public class KcpConfig {
                     public void initChannel(UkcpChannel ch) throws Exception {
                         ChannelPipeline p = ch.pipeline();
                         p.addLast(kcpServerHandler);
+                        p.addLast(testHandler);
                     }
                 });
         ChannelOptionHelper.nodelay(b, true, 20, 2, true)
