@@ -2,5 +2,5 @@ spring:
 
 kcp:
   bosscount: 10
-  port: 18032
+  port: 26379
   conv: 10

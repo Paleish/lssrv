@@ -6,11 +6,13 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 @ChannelHandler.Sharable
+@Slf4j
 public class KcpServerHandler extends AbsChannelAdapter {
 
     @Value("${kcp.conv}")
@@ -27,7 +29,7 @@ public class KcpServerHandler extends AbsChannelAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         ByteBuf buf = (ByteBuf) msg;
 //        short curCount = buf.getShort(buf.readerIndex());
-        ctx.writeAndFlush(msg);
+//        ctx.writeAndFlush(msg);
 
 //        if (curCount == -1) {
 //            ctx.close();
